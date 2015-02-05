@@ -16,6 +16,7 @@ namespace ServerFTP.ClasseMetier
 
         public FTPServer(FormMain formMain)
         {
+
             this.formMain = formMain;
         }
 
@@ -47,6 +48,8 @@ namespace ServerFTP.ClasseMetier
                 ClientConnection connection = new ClientConnection(client,formMain.consoleManager);
 
                 ThreadPool.QueueUserWorkItem(connection.HandleClient, client);
+                ClientFTP clientFTP = new ClientFTP(client);
+                this.formMain.ListClient.Add(clientFTP);
             }
             catch (Exception e)
             {

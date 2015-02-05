@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <User xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <User username="rick" password="test" homedir="C:\rootFTP"  />
-  <User username="test2" password="test2" homedir="C:\rootFTP" rename="true" delete ="true" download ="true" directory="true" />
+  <User username="rick" password="test" homedir="C:\FTP\rick"  />
+  <User username="test2" password="test2" homedir="C:\FTP\test2" rename="true" delete ="true" download ="true" directory="true" />
 </User>

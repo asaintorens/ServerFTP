@@ -9,19 +9,57 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ServerFTP.ClasseMetier;
 using Manager;
+using System.Net.Sockets;
+using System.Threading;
 namespace ServerFTP
 {
     public partial class FormMain : Form
     {
         public FTPServer ftpServer;
         public ManagerConsole consoleManager;
+        public List<ClientFTP> ListClient;
+        public BindingSource DataSourceListeClient;
+
         public FormMain()
         {
+
             InitializeComponent();
             this.ftpServer = new FTPServer(this);
             this.consoleManager = new ManagerConsole(this);
             this.buttonStop.Enabled = false;
+            this.ListClient = new List<ClientFTP>();
+
+            LoadGridView();
         }
+
+        private void LoadGridView()
+        {
+            this.DataSourceListeClient = new BindingSource();
+           
+            this.DataSourceListeClient.DataSource = this.GetData();
+            this.dataGridViewClientConnected.DataSource = this.DataSourceListeClient;
+            this.dataGridViewClientConnected.Refresh();
+            this.dataGridViewClientConnected.AutoGenerateColumns = true;
+
+        }
+
+        private object GetData()
+        {
+             List<ClientFTP> ListClientInit = new List<ClientFTP>();
+             var value = from x in ListClientInit select new { x.adresseIP, x.tcpClient.Available, x.tcpClient.Connected, x.tcpClient.ReceiveBufferSize, x.tcpClient.ReceiveTimeout, x.tcpClient.Client.SendBufferSize };
+            try
+            {
+                 value = from x in this.ListClient select new { x.adresseIP, x.tcpClient.Available, x.tcpClient.Connected, x.tcpClient.ReceiveBufferSize, x.tcpClient.ReceiveTimeout, x.tcpClient.Client.SendBufferSize };
+                
+
+            }
+            catch (Exception e)
+            {
+
+            }
+            return value;
+            
+         }
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
@@ -60,20 +98,17 @@ namespace ServerFTP
             formGestionClient.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+
+        private void FormMain_Load(object sender, EventArgs e)
         {
-            AffichageClient unClient = new AffichageClient("10.10.10.10", "toto");
-            unClient.Width = this.panelClients.Width;
-           
-            int numberClients = this.panelClients.Controls.Count;
 
-            unClient.Location = new System.Drawing.Point(0, numberClients*40);
+        }
 
-            unClient.Parent = this.panelClients;
-            unClient.setPosition(0);
-            this.panelClients.Controls.Add(unClient);
-            unClient.Show();
-
+        private void timerRefreshView_Tick(object sender, EventArgs e)
+        {
+             
+             this.DataSourceListeClient.DataSource = this.GetData();
         }
 
 

@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClasseMetier\ClientConnection.cs" />
+    <Compile Include="ClasseMetier\ClientFTP.cs" />
     <Compile Include="ClasseMetier\FTPServer.cs" />
     <Compile Include="ClasseMetier\User.cs" />
     <Compile Include="ClasseMetier\UserStore.cs" />

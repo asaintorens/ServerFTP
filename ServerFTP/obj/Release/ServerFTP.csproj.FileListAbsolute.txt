@@ -1,0 +1,11 @@
+C:\Users\alexa_000\Documents\Visual Studio 2013\Projects\ServerFTP\ServerFTP\bin\Release\ServerFTP.exe.config
+C:\Users\alexa_000\Documents\Visual Studio 2013\Projects\ServerFTP\ServerFTP\bin\Release\ressources\XMLFileClient.xml
+C:\Users\alexa_000\Documents\Visual Studio 2013\Projects\ServerFTP\ServerFTP\bin\Release\ServerFTP.exe
+C:\Users\alexa_000\Documents\Visual Studio 2013\Projects\ServerFTP\ServerFTP\bin\Release\ServerFTP.pdb
+C:\Users\alexa_000\Documents\Visual Studio 2013\Projects\ServerFTP\ServerFTP\obj\Release\ServerFTP.csprojResolveAssemblyReference.cache
+C:\Users\alexa_000\Documents\Visual Studio 2013\Projects\ServerFTP\ServerFTP\obj\Release\ServerFTP.FormGestionClient.resources
+C:\Users\alexa_000\Documents\Visual Studio 2013\Projects\ServerFTP\ServerFTP\obj\Release\ServerFTP.FormMain.resources
+C:\Users\alexa_000\Documents\Visual Studio 2013\Projects\ServerFTP\ServerFTP\obj\Release\ServerFTP.Properties.Resources.resources
+C:\Users\alexa_000\Documents\Visual Studio 2013\Projects\ServerFTP\ServerFTP\obj\Release\ServerFTP.csproj.GenerateResource.Cache
+C:\Users\alexa_000\Documents\Visual Studio 2013\Projects\ServerFTP\ServerFTP\obj\Release\ServerFTP.exe
+C:\Users\alexa_000\Documents\Visual Studio 2013\Projects\ServerFTP\ServerFTP\obj\Release\ServerFTP.pdb

@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.richTextBoxConsole = new System.Windows.Forms.RichTextBox();
             this.buttonStart = new System.Windows.Forms.Button();
             this.buttonStop = new System.Windows.Forms.Button();
             this.buttonGestionClient = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panelClients = new System.Windows.Forms.Panel();
+            this.dataGridViewClientConnected = new System.Windows.Forms.DataGridView();
+            this.timerRefreshView = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientConnected)).BeginInit();
             this.SuspendLayout();
             // 
             // richTextBoxConsole
@@ -74,37 +76,37 @@
             this.buttonGestionClient.UseVisualStyleBackColor = true;
             this.buttonGestionClient.Click += new System.EventHandler(this.buttonGestionClient_Click);
             // 
-            // button1
+            // dataGridViewClientConnected
             // 
-            this.button1.Location = new System.Drawing.Point(540, 161);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.dataGridViewClientConnected.AllowUserToAddRows = false;
+            this.dataGridViewClientConnected.AllowUserToDeleteRows = false;
+            this.dataGridViewClientConnected.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewClientConnected.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewClientConnected.Location = new System.Drawing.Point(12, 161);
+            this.dataGridViewClientConnected.Name = "dataGridViewClientConnected";
+            this.dataGridViewClientConnected.ReadOnly = true;
+            this.dataGridViewClientConnected.Size = new System.Drawing.Size(962, 203);
+            this.dataGridViewClientConnected.TabIndex = 5;
             // 
-            // panelClients
+            // timerRefreshView
             // 
-            this.panelClients.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panelClients.Location = new System.Drawing.Point(13, 161);
-            this.panelClients.Name = "panelClients";
-            this.panelClients.Size = new System.Drawing.Size(507, 216);
-            this.panelClients.TabIndex = 5;
+            this.timerRefreshView.Enabled = true;
+            this.timerRefreshView.Tick += new System.EventHandler(this.timerRefreshView_Tick);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1034, 389);
-            this.Controls.Add(this.panelClients);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dataGridViewClientConnected);
             this.Controls.Add(this.buttonGestionClient);
             this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.richTextBoxConsole);
             this.Name = "FormMain";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.FormMain_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientConnected)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -115,8 +117,8 @@
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.Button buttonStop;
         private System.Windows.Forms.Button buttonGestionClient;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panelClients;
+        private System.Windows.Forms.DataGridView dataGridViewClientConnected;
+        private System.Windows.Forms.Timer timerRefreshView;
     }
 }
 
